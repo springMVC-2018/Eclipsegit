@@ -1,5 +1,5 @@
 package entity;
-
+// 更新代码上传到 github上。
 import java.io.Serializable;
 
 public class Course implements Serializable {
