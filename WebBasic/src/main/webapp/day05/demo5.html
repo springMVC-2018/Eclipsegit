@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <script>
+         function jc(){
+      //  获取文本框里面的值 
+      var n=document.getElementById("num").value;  //文本框的值
+      // 获取span的
+      var span=document.getElementById("result");
+      if(isNaN(n)){
+    	 // 如果不是数字 给予提示：
+    	 span.innerHTML="请输入数字";
+      }else{
+    	// 如果是数字 算出阶乘：
+    	if(n<0){
+    		span.innerHTML="负数没有阶乘";
+    	}else if(n==0){
+    		span.innerHTML="1";
+    	}else{
+    // 阶乘需要累乘 ，需要用到循环 
+       var s=1;   // i 是要算阶乘的一个 数 
+    for(var i=1;i;i--){  //  i  等价于 i>0
+    	s *=i;   // s*=i  等价于 s=s*i
+    }
+    span.innerHTML=s;
+  }
+}
+}
+    </script>
+</head>
+<body>
+     <p>n(正整数)的阶乘=1*2*3*....*n</p>
+     <p>0的阶乘固定为1</p>
+     <p>
+         <input type="text" id="num"/>
+         <input type="button"  value="阶乘"  onclick="jc();"/>=<span id="result"></span>
+     </p>
+</body>
+</html>

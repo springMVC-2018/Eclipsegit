@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单区分-tile</title>
+</head>
+<body>
+	<!-- 1. 表单元素：用来声明数据提交的范围，只有在此元素内的数据可以提交给服务器。-->
+	<!-- action : 声明数据提交的目标   。method / enctype: 将来讲服务器的时候再讲。 -->
+	
+	<form action="https://lol.qq.com/">
+	<!-- 需要有内容才会显示。 -->
+	<!-- 2. 表单控件：用来让用户输入数据。 -->
+	<!-- 1) input 元素（9个），他们之间用type 属性区分。 -->
+	<!-- 文本框 
+    1. value：设置默认值
+    2. maxlength : 设置最大长度,最多输入的字符数量。
+    3. readonly: 设置只读 ，账号不能修改。-->
+	<p>
+		账号 :<input type="text" value="tarena" maxlength="10" readonly />
+	</p>
+	<!-- 密码框
+    1. value：设置默认值
+    2. maxlength : 设置最大长度,最多输入的字符数量。
+    3. readonly: 设置只读-->
+	<p>
+		密码 :<input type="password" maxlength="10" />
+	</p>
+	<!-- 单选框  name：组名，同一组radio 互斥。checked ：设置默认选中，如：性别默认被选中
+    value : 将来再讲。 -->
+	<p>
+		性别: 
+		<input type="radio" name="sex" checked /> 男 
+		<input type="radio" name="sex" /> 女
+	</p>
+	<!-- 多选框 checked ；设置默认选中  。  name/value ： 将来再讲。 -->
+	
+	兴趣 :
+	<p>	
+		<input type="checkbox" /> 音乐 
+		<input type="checkbox" /> 看书 
+		<input type="checkbox" /> 打球
+	</p>
+	
+	<!-- 文件筐 -->
+	<p>
+	     头像 :<input type="file"/>
+	</p>
+	<!-- 隐藏框 -->
+	<p>
+	   <input type="hidden"  value="abc"/>
+	</p>
+	<!-- 按钮  
+	submit:提交表单中的数据 。
+	reset:将表单中的数据重置为初始值，而不是清空数据。
+	button: 没有任何功能，需要通过js 定义功能。-->
+	<p>
+	   <input type="submit"  value="注册"/>
+	   <input type="reset"  value="重置"/>
+	   <input type="button"  value="试一下"/>
+	</p>
+
+	<!-- 2) 其他元素（3个） -->
+    <!-- label : 用来管理表单中的文本.可以将文本与控件绑定在一起，从而增加了控件的可点击面积，
+    id : 元素的唯一标识，相当于元素的身份证号，任何元素都可以有id,程序员有义务保障元素的id不重复
+    -->
+       <p>
+            <input type="checkbox"  id="c1"/>  <!-- "checkbox" 中间有空格的话，输入框会拉长 -->
+            <label for="c1">我已阅读并自愿遵守此协议！</label>
+        </p>
+    <!-- select :下拉选，selected: 设置默认选中，value : 将来再讲。-->
+    <p>
+        城市 :
+        <select>
+             <option>请选择</option>
+             <option selected>北京</option>
+             <option>上海</option>
+             <option>广州</option>
+             <option>深圳</option>
+             <option>杭州</option>
+        </select>
+    </p>
+    
+    <!-- textarea : 文本域，rows : 多少行文字 的长度。。cols : 多少列文字 的宽度-->
+    个人介绍：
+     <p>     
+         <textarea rows="5" cols="30">这是文本域的默认值</textarea>
+     </p>
+    
+</form>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+     <style>
+         /*2. 类选择器：选择class等于某值的所有元素 .class 是程序员根据逻辑
+         自己给元素增加的分类。*/
+         .girl {
+             color : pink;
+         }
+        /*3. id选择器： 选择id 等于某值的唯一的元素。*/
+         #p4{
+             color: yellow;
+         }
+     /*4. 选择器组：写出一组选择器，选中每个选择器所对应的目标的并集。*/
+     .girl,#p4{
+          font-weight:bold;    /*是让字体加粗。*/
+     }
+   /*5. 派生选择器：*/
+   /*5.1  选择某元素的子孙：*/
+   #p5 b{
+       color:red;
+   }
+   
+   /*5.2 选择某元素的儿子：*/
+   #p5>b{
+       font-size : 30px;   /*font-size: 字体大小*/
+   }
+   
+    /* 6. 伪类选择器：根据元素的状态选择元素。*/   
+     /* 6. 1 选择未访问过的超链接*/   
+     a:link {
+           color:green ;
+     }   
+      /* 6. 2 选择已访问过的超链接。*/   
+     a:visited{
+          color:red;
+     }
+     /*6.3 选择激活态（正在点） 的按钮*/ 
+      #i1:active{  /*如果在不点击的那一刻想让按钮背景颜色改变的话，则不需要 :active 修饰。*/
+         background-color:blue ;   /*当点击的时候 显示整个按钮的背景颜色  */
+      }
+    /*6.4: 选择鼠标悬停态（触碰）的图片*/
+       img:hover{
+          width:1000px;
+          height:200px;
+       }
+       input:hover{
+            background-color:blue ;    /*当鼠标悬停态 时 显示整个按钮的背景颜色  */
+            color:red ;                       /*当鼠标悬停态 时 仅显示字体的颜色 为红色   */
+       }
+    /*6.5 :选择有焦点的文本框/密码框/文本域*/
+      #i2:focus{
+          background-color:green;   /*当鼠标点击后 文本框/密码框/文本域 整个背景的颜色 */
+      }
+     </style>
+</head>
+<body>
+      <p class="girl">苍老师呀苍老师</p>
+      <p>范传奇呀范传奇</p>
+      <p class="girl">王克进呀王克进</p>
+      <p id="p4">瞧你们那点破事</p>
+      <p ID="p5">
+          北京市<u>海淀区<b>北三环</b>西路甲</u>18号<b>中鼎大厦</b>B座8层。
+      </p>
+  
+   <!-- 伪类选择器： -->
+      <p>
+          <a href=https://baike.baidu.com>英雄联盟</a>
+          <a href=https://www.jd.com/>京东商城</a>
+          <a href=https://tiaomao.com/>天猫商城</a>       
+      </p>
+     <p>
+        <input type="button"  value="按钮" id="i1"/>
+     </p>
+     
+     <p>
+        <input type="text" id="i2"/>
+     </p>
+     <p  align="center">   <!-- align="center" 居中属性 -->
+         <a href=http://lol.duowan.com/ target="_blank"><img alt="英雄联盟图片" title="要撸一撸的点击这里"  src="../images/lol.png"/></a>
+     </p>
+     <p>
+          <input type="button"  value="确认按钮"/>
+     </p>
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>

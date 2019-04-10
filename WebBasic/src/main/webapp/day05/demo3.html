@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+    function pf(){
+    // 获取文本框
+    var input =document.getElementById("num");
+   // 获取框内的值 
+   var n=input.value;
+   console.log(n);
+   // 获取span
+   var span=document.getElementById("result");
+   //判断该值是否为数字；
+   if(isNaN(n)){
+	   // 不是数字给予提示 
+	   span.innerHTML="请输入正确的数字";
+	   
+   }else{
+	   // 是数字，计算平方
+	   span.innerHTML=n*n;
+   } 
+}
+ // demo2 里面继续写：公司写：
+ // 4 运算符 
+    console.log(5/2);   // 整数处于整数 该整数就整数，该小数就是小数 。
+    // 全等: === 
+    // - 类型相同，
+    // - 数值也要相同
+    // 相等 == 只是数字相等 
+    var m="3";
+    var n=3;
+    console.log(m==n);    // "3" 和 3 值相等，但是数据类型不相等。
+    console.log(m===n);   // 不相等 。
+    console.log(m+n);
+    // 5. 条件表达式
+    // js中可以用任意数据做条件，当使用非布尔值做条件时，所有的空值都等价于 false， 
+    // 非空 值等价于 true.  控值：null/o/""/undefined/NaN
+    
+    // 设计的目的是为了简化条件表达式 。
+    var k=NaN;
+    if(k){
+    	 console.log("ok");
+    }
+    k && console.log("你好");
+</script>
+</head>
+<body>
+     <input type="text"  id="num"/>
+     <input type="button"  value="平方"  onclick="pf();"/> =<span id="result"></span>
+</body>
+</html>
+
+
+
+

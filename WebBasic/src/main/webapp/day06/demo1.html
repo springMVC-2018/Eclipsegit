@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+    // 2. Number
+    var n=3.1415926;
+    console.log(n.toFixed(3));
+   // 4. Array（js中的数组都是Object 数组 ）
+   // 4.1 如何创建数组
+   // 1) 若创建数组时就已知数据 
+   var a1=["zhangsan",25,true];
+   console.log(a1[2]);
+   // 2) 若创建数组时不知道要存什么数据，就创建一个空数组 。
+   var a2 =new Array();
+   // 后面知道要存什么数据时，追加数据 .push() : 是往里面追加数据 
+   a2.push("list");
+   a2.push(28);
+   a2.push(false);
+   console.log(a2[1]);
+   //4.2 数组倒转 
+   var arr=[5,12,8,1,6,3];
+   arr.reverse();
+   console.log(arr);
+   // 4.3 数组排序 , 
+   // 1) 数组默认是按照字符串由小到大排序 。
+   //2) 可以通过替换比较方法来改变排序结果，在js 里方法也是对象，可以做参数，
+   //由于该方法不需要复用，所以一般写出匿名函数。
+   arr.sort(function(a,b){
+	   return a-b;
+   });
+   console.log(arr);
+   // 5. Math:
+	   console.log(Math.PI);
+       console.log(Math.round(4.56));
+  // 6. Date:
+ //  1) 创建客户机的当前时间 。
+  var d1=new Date();
+ console.log(d1);
+ console.log(d1.toLocaleString());  // 时间格式转化为中国 时间格式 ：日期/时间 
+ // 2) 创建指定的时间(一般来源于服务器)
+ var d2=new Date("2016/12/12  12:12:12");
+ console.log(d2);
+ // 3) 转换为本地日期/时间格式的字符串
+ console.log(d1.toLocaleDateString());    // 日期
+ console.log(d1.toLocaleTimeString());    // 时间
+ //4) 读写时间分量（某一个部位的值）
+ // 读：getXXX()      写：setXXX()
+    var y=d1.getFullYear(); // 年 
+ // 月份从 0 开始 
+    var m=d1.getMonth();   // 月 
+    var d=d1.getDate();     //  日 
+    var d2=d1.getDay();   // 星期 
+    var h=d1.getHours();   //  时
+    var mi=d1.getMinutes(); // 分 
+    var s=d1.getSeconds();
+    var today=y+"年"+(m+1)+"月"+d+"日"+"星期"+d2+" "+h+"时"+"分"+mi+"秒"+s;
+    console.log(today);
+    
+   // 7. RegExp :
+	   var str="you can you up,no can no bb.";
+ // 7.1 创建正则对象 
+       var reg=/no/;
+ // 7.2 正则对象的方法 
+ // 1) reg.exec(str)
+ //   普通模式：从str中找出与reg匹配的第一个子串 。
+ console.log(reg.exec(str));
+ 
+ // 全局模式：第n次调用则从str中找出与reg匹配的第n个子串 。
+ var reg=/no/g;
+ console.log(reg.exec(str));
+ console.log(reg.exec(str));
+ console.log(reg.exec(str));
+ console.log(reg.exec(str));
+ 
+ // 2) reg.test(str)
+ // 判断str中是否包含与reg匹配的子串 。
+  console.log(reg.test(str));
+ 
+ // 7.3 字符串支持正则的方法
+ //  1 )  replace
+     console.log(str.replace(reg,"bu"));   // 将 no 替换成 bu 
+ //  字符串是不可变的，修改字符串的方法并没有改变原字符串，而是生成了新字符串 。
+     console.log(str); 
+ //   2)  match
+     console.log(str.match(reg));
+//    3)  search   搜查
+     console.log(str.search(reg));
+     
+ //  公司2018-12-11写笔记：
+ //   8. Function - 累加 求和案例 
+ //  通过 function 关键字所声明的，是一个函数（Function） 对象。
+ // 浏览器加载网页到此处时，并没有调用此对象，仅仅是创建了对象而已 。
+ function sum(){
+	 var s=0;
+	//js中的arguments. 主要是可以对输入的参数进行跟踪 ,如跟踪 是最下面 sum() 括号里面输入的数的长度 ，那么就是  arguments.length : 
+	  if(arguments.length>0){   
+		  for(var i=0;i<arguments.length;i++){
+			 s+= arguments[i];
+		  }
+	  }
+	  return s;
+ }
+ //  一般是在点击按钮时调用函数对象，也可以在页面加载时直接调用他。
+ console.log(sum(1,2,3));   //  括号里面输入的数 是 最上面 argument.length 长度 （也就是 几个数 ）
+ console.log(sum(4,5,6,7,8));
+ // 结论，js的函数没有重载，单可以实现和 重载一样的调用方式，如手机里面的  F图
+</script>
+</head>
+<body>
+    
+</body>
+</html>

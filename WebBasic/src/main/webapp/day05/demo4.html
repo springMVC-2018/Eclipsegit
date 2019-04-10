@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>随机数小模块项目</title>
+    <script>
+     /*网页加载时直接生成随机数
+     改数在body 加载前就有了，所以用户点击猜时在对应函数内可以用。
+    0<=x<1    — 》 0<=100x<100   — >0 ，1 ，...99 
+     */
+   var ran=parseInt(Math.random()*100);
+    // 无论此函数写在前面还是这里，它都是在用户点击按钮时调用的，它都比生成随机数执行的晚 。
+   function guess(){
+   // 获取文本框里的值 
+    	var n=document.getElementById("num").value;
+        var span=document.getElementById("result");
+   // 判断该值是否为数字：
+        if(isNaN(n)){
+        	// 不是数字给予提示 ：
+        	       span.innerHTML ="请输入数字";
+        	   }else{
+        	//  是数字 和随机数比较 ：
+        		   if(n<ran){
+        			   span.innerHTML="小了";
+         	      }else if(n>ran){
+         	    	 span.innerHTML="大了";
+         	      }else{
+         	    	 span.innerHTML="对了";
+         	      }
+         	   }
+         	} 
+</script>
+</head>
+<body>
+    <input type="text"  id="num"/>
+    <input type="button"  value="猜"  onclick="guess();"/> <span id="result"></span>
+</body>
+</html>

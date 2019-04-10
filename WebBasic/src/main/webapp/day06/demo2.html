@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+     .ok{color:green;}
+     .error{color:red;}
+</style>
+<script>
+// 验证账号的格式：
+   function checkCode(){
+  // 获取账号：
+  var code=document.getElementById("code").value;
+// 获取span
+var span=document.getElementById("code_msg");
+  // 判断账号格式 ：
+  var reg=/^\w{5,10}$/;   /* ^ ：是开头的意思，$ : 结尾 */
+  // abc123456￥￥##***()
+  if(reg.test(code)){
+	  // 格式对了，变绿
+	  span.className="ok";
+	  return true;
+  }else{
+	  // 格式错了，变红 
+       span.className="error";
+	  return false;
+  }
+}
+
+// 验证密码格式：
+function checkPwd(){ 
+	  var pwd=document.getElementById("pwd").value;   /* 这个变量必须是下面 if 括号里面的 " pwd"*/
+	  var span=document.getElementById("pwd_msg");
+	  var reg2=/^\w{10,20}$/;
+	  if(reg2.test(pwd)){
+		  // 
+		  span.className="ok";
+		  return true;
+	  }else{
+		  span.className="error";
+		  return false;
+	  }
+}
+</script>
+</head>
+<body>   <!-- 表单上有 onsubmit 事件，触发时就提交了数据。 不符合要求可以阻止提交数据。-->   <!-- 如果账号密码都为空，点击“登录” 如果需要两个文本框都爆红："return checkCode()+checkPwd()==2;" -->
+    <form action="http://www.tmooc.cn"  onsubmit="return checkCode() && checkPwd();">  <!-- 光标移除事件：onblur="checkCode(); 不符合要求 的话会报错。-->
+         <p>账号 : <input type="text"  id="code"  onblur="checkCode();"/><br><span id="code_msg"> 5-10位字母、数字、下划线</span></p>
+         <p>密码 : <input type="password"  id="pwd"  onblur="checkPwd();"/><br><span id="pwd_msg"> 10-20位字母、数字、下划线</span></p>
+         <p><input type="submit"  value="登录"/></p>
+    </form>
+</body>
+</html>
